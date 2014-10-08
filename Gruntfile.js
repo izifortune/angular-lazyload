@@ -5,13 +5,29 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    ngmin: {
+    ngAnnotate: {
+      options: {
+        singleQuotes: true,
+      },
+      app1: {
+        files: {
+          '.tmp/main.js': ['src/main.js'],
+        },
+      },
+    },
+
+    concat: {
       dist: {
-        files: [{
-          cwd: 'src/',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
-        }]
+        src: ['src/main.js'],
+        dest: 'dist/main.js',
+      },
+    },
+
+    uglify: {
+      my_target: {
+        files: {
+          'dist/main.min.js': ['.tmp/main.js']
+        }
       }
     },
 
@@ -67,7 +83,10 @@ module.exports = function(grunt) {
   grunt.registerTask('build', function() {
     grunt.task.run([
       'clean:dist',
-      'test'
+      'test',
+      'ngAnnotate',
+      'copy:dist',
+      'uglify'
             //'concat'
             //'uglify'
             ]);
