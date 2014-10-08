@@ -43,21 +43,31 @@ module.exports = function(grunt) {
     //     configFile: 'karma.conf.js'
     //   }
     // },
-    // jasmine: {
-    //   main: {
-    //     src: 'src/*.js',
-    //     options: {
-    //       specs: 'test/*.js',
-    //       // helpers: 'spec/*Helper.js'
-    //     }
-    //   }
-    // }
+    jasmine: {
+      main: {
+        src: 'src/*.js',
+        options: {
+          specs: 'test/*.js',
+          vendor: [
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/jquery.lazyload/jquery.lazyload.js',
+          'bower_components/angular/angular.js',
+          'bower_components/angular-mocks/angular-mocks.js',
+          ]
+        }
+      }
+    }
 
   });
+
+  grunt.registerTask('test', [
+    'jasmine'
+  ]);
 
   grunt.registerTask('build', function() {
     grunt.task.run([
       'clean:dist',
+      'test'
             //'concat'
             //'uglify'
             ]);
@@ -65,7 +75,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'jshint',
-    // 'test',
     'build'
     ]);
 };

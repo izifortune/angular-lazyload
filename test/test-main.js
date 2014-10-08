@@ -9,9 +9,9 @@ describe('Testing lazyload directive', function() {
     scope = $rootScope.$new();
   }));
 
-  // it('', inject(function ($compile) {
-  //   element = angular.element('<accordion></accordion>');
-  //   element = $compile(element)(scope);
-  //   expect(element.text()).toBe('this is the accordion directive');
-  // }));
+  it('', inject(function ($compile) {
+    element = angular.element('<accordion></accordion>');
+    element = $compile(element)(scope);
+    expect(element.text()).toBe('this is the accordion directive');
+  }));
 });
