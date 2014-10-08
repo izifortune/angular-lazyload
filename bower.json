@@ -1,0 +1,27 @@
+{
+  "name": "angular-lazyload",
+  "version": "0.0.1",
+  "authors": [
+    "Fabrizio Fortunato <fortune@cortesconta.net>"
+  ],
+  "description": "Lazy load image loader wrapper for angular",
+  "main": "src/main.js",
+  "keywords": [
+    "angular",
+    "lazyload",
+    "angular-lazyload"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.*",
+    "angular": "~1.2.26"
+  }
+}
