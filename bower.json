@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "jquery": "~1.*",
-    "angular": "~1.2.26"
+    "angular": "~1.2.26",
+    "jquery.lazyload": "~1.9.3"
   }
 }
