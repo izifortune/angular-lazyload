@@ -16,18 +16,18 @@ module.exports = function(grunt) {
       },
     },
 
-    concat: {
-      dist: {
-        src: ['src/main.js'],
-        dest: 'dist/main.js',
-      },
-    },
-
     uglify: {
       my_target: {
         files: {
-          'dist/main.min.js': ['.tmp/main.js']
+          'dist/angular-lazyload.min.js': ['.tmp/main.js']
         }
+      }
+    },
+
+    copy: {
+      dist: {
+        src: '.tmp/main.js',
+        dest: 'dist/angular-lazyload.js'
       }
     },
 
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', function() {
     grunt.task.run([
       'clean:dist',
-      'test',
+      // 'test',
       'ngAnnotate',
       'copy:dist',
       'uglify'

@@ -5,7 +5,7 @@
     "Fabrizio Fortunato <fortune@cortesconta.net>"
   ],
   "description": "Lazy load image loader wrapper for angular",
-  "main": "src/main.js",
+  "main": "dist/angular-lazyload.js",
   "keywords": [
     "angular",
     "lazyload",
